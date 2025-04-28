@@ -1,0 +1,190 @@
+
+Practical 3 :write and application to read temperature from the environment ..
+
+const int sensor=A1;
+float tempc;
+float tempf; 
+float vout; 
+
+void setup()
+{
+    pinMode(sensor,INPUT); 
+    pinMode(13,OUTPUT); 
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    vout=analogRead(sensor); 
+    vout=(vout*500)/1023; 
+    tempc=vout; 
+    tempf=(vout*1.8)+32; 
+    Serial.print("in DegreeC="); 
+    Serial.print("	"); 
+    Serial.print(tempc); 
+    Serial.println(); 
+    Serial.print("in Fahrenheit="); 
+    Serial.print("	"); 
+    Serial.print(tempf); 
+    Serial.println();
+    delay(2000);
+
+    if(tempc>=25)
+    {
+        digitalWrite(13,HIGH); 
+        delay(500);
+    }
+    else
+    {
+        digitalWrite(13,LOW); 
+        delay(500);
+    }
+}
+
+Practical 4 : Write program using arudino to control LED (one or more on/off).blinking
+
+Int led=8; 
+
+void setup()
+{
+    pinMode(led, OUTPUT);
+}
+
+void loop()
+{
+    digitalWrite(led, HIGH); 
+    delay(1000);
+    digitalWrite(led, LOW); 
+    delay(1000);
+}
+
+Practical 5: create a program so that when the users enters b the green light blinks g the green light is illuminated y …
+
+#define LED_PIN_1 11
+#define LED_PIN_2 10
+#define LED_PIN_3 9
+
+void setup()
+{
+    pinMode(LED_PIN_1, OUTPUT); 
+    pinMode(LED_PIN_2, OUTPUT); 
+    pinMode(LED_PIN_3, OUTPUT);
+}
+
+void loop()
+{
+    digitalWrite(LED_PIN_1, HIGH); 
+    digitalWrite(LED_PIN_2, HIGH); 
+    digitalWrite(LED_PIN_3, HIGH); 
+    delay(1000); 
+    digitalWrite(LED_PIN_1, LOW); 
+    digitalWrite(LED_PIN_2, LOW); 
+    digitalWrite(LED_PIN_3, LOW); 
+    delay(1000);
+}
+
+Practical 6 :write a program that’s asks the users for number and outputs the numbert in squared that is entered…
+
+int x;
+
+void setup()
+{
+    Serial.begin(9600); 
+    Serial.println("Enter A Number:-");
+    while (Serial.available() == 0){}
+    x = Serial.parseInt(); 
+    Serial.println("Square of a Number is:-"); 
+    Serial.println(x*x);
+}
+
+void loop()
+{}
+
+Practical :7 write a program to control the color of led by turning 3 different potentiometers…
+
+char val; 
+
+void setup()
+{
+    pinMode(13, OUTPUT);
+    pinMode(12, OUTPUT);
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    if(Serial.available() > 0)
+    {
+        val = Serial.read();
+        switch(val)
+        {
+            case 'a':
+                digitalWrite(13, HIGH); 
+                break;
+            case 'b':
+                digitalWrite(13, LOW);
+                break;
+        }
+    }
+}
+
+Practical 8: write a program read the temperature sensor and sendthe values and values and send the values to serial monitoring…..
+
+float temp;
+int tempPin = 0; 
+
+void setup()
+{
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    temp = analogRead(tempPin); 
+    temp = temp * 0.48828125;
+    Serial.print("TEMPERATURE = "); 
+    Serial.print(temp); 
+    Serial.print("*C");
+    Serial.println(); 
+    delay(1000);
+}
+
+Practical 9 :Write a program so I display the temperature in a fraheint as well as the maximum and minimum temperature it seen….
+
+float temp;
+float tempF;
+float maxTemp = -1000.0; 
+float minTemp = 1000.0;
+int tempPin = 0;
+
+void setup()
+{
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    temp = analogRead(tempPin);
+    temp = temp * 0.48828125;
+    tempF = (temp * 9.0/5.0) + 32.0; 
+
+    if (tempF > maxTemp)
+    {
+        maxTemp = tempF;
+    }
+    if (tempF < minTemp)
+    {
+        minTemp = tempF;
+    }
+
+    Serial.print("TEMPERATURE = "); 
+    Serial.print(temp);
+    Serial.print("*C / "); 
+    Serial.print(tempF);
+    Serial.print("*F / Max: ");
+    Serial.print(maxTemp); 
+    Serial.print("*F / Min: "); 
+    Serial.print(minTemp);
+    Serial.println();
+    delay(1000);
+}

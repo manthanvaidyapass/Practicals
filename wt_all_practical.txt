@@ -1,0 +1,562 @@
+Practical 1 : create a responsive with page which shows the college dashboard, with sidebar & statistics in card using HTML5. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="Bootstrap.css">
+   <style>
+.popup{
+width: 400px; background:lightblue;
+border-radius: 8px;
+position: absolute;
+top: 0%;
+left: 50%;
+transform: translate(-50%,-50%)scale(0.1);
+text-align: center;
+padding: 30px 30px;
+color: #333;
+visibility: hidden;
+transition: transform 0.4s, top 0.4s;
+    }
+
+  .open-popup{
+    visibility: visible;
+    top:15%;
+    transform: translate(-50%,-50%)scale(1);
+
+  }
+.popup img{
+width: 100px;
+margin-top: -50px;
+border-radius: 50%;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.popup h2{
+font-size: 38px; 
+font-weight: 500;
+margin: 30px 0 10px;
+}
+.popup button{
+width: 100%;
+margin-top: 50px; 
+padding: 10px 0; 
+background: white;
+color: black;
+border: 0;
+outline: none;
+font-size: 18px;
+border-radius: 4px;
+cursor: pointer; box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+   </style>
+</head>
+<body>
+  <section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-5 d-none d-xl-block " >
+               <img src="logo2.jpg"
+                  alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .10rem; border-bottom-left-radius: .10rem;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <align class="center">
+                    <h2 style="text-align:center;background-color:lightblue;color:black">STUDENT'S SIGN UP</h2>
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text"style="border-color:blue" id="form3Example1m" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example1m">First name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text"style="border-color:blue"  id="form3Example1n" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example1n">Last name</label>
+                      </div>
+                    </div>
+                  </div>
+  
+      
+  
+                  <div class="form-outline mb-4">
+                    <input type="text"style="border-color:blue"  id="form3Example8" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example8">Address</label>
+                  </div>
+  
+                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+  
+                    <h6 class="mb-0 me-4">Gender: </h6>
+  
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input"style="border-color:blue"  type="radio" name="inlineRadioOptions" id="femaleGender"
+                        value="option1" />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" style="border-color:blue" type="radio" name="inlineRadioOptions" id="maleGender"
+                        value="option2" />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline mb-0">
+                      <input class="form-check-input"style="border-color:blue"  type="radio" name="inlineRadioOptions" id="otherGender"
+                        value="option3" />
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+  
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+  
+                      <select class="select">
+                        <option value="1">State</option>
+                        <option value="2">Maharashtra</option>
+                        <option value="3">Gujrat</option>
+                        <option value="4">Delhi</option>
+                        <option value="4">Other</option>
+                      </select>
+  
+                    </div>
+                    <div class="col-md-6 mb-4">
+  
+                      <select class="select">
+                        <option value="1">City</option>
+                        <option value="2">Pune</option>
+                        <option value="3">A.Nagar</option>
+                        <option value="4">Other</option>
+                      </select>
+  
+                    </div>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="date" id="form3Example9" style="border-color:blue"  class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example9">DOB</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example90" style="border-color:blue" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example90">Pincode</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example99" style="border-color:blue" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example99">Course</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example97"style="border-color:blue"  class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example97">Email ID</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example97" style="border-color:blue" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example97">Password</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example97" style="border-color:blue"  class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example97">Confirm Password</label>
+                  </div>
+  
+                  <div class="d-flex justify-content-center pt-3">
+                    <!-- <button type="button" class="btn btn-light btn-lg">Reset all</button> -->
+                    <button type="button" class="btn btn-warning btn-lg ms-2" onclick="openPopup()">Submit form</button>
+                    <div class="popup" id="popup">
+                    <img src="tick2.png">
+                    <h2>Done..!!</h2>
+                    <p>
+                      Your detail has been successfully submitted. Thanks!
+                    </p>
+                    <button type="button" onclick="closePopup()">OK</button>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    let popup = document.getElementById("popup");
+    function openPopup(){
+      popup.classList.add("open-popup");
+    }
+    function closePopup(){
+      popup.classList.remove("open-popup");
+    }
+  </script>
+</body>
+</html>
+
+
+
+Practical 2 : 2. Write a JS program to get the user registration data & push registration data & push to array with AJAX push to array & data list in new.
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1B</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <button
+        class="btn btn-outline-success mt-5"
+        data-toggle="modal"
+        data-target="#addNewUser"
+      >
+        Add New User
+      </button>
+      <table class="table table-striped table-bordered my-5">
+        <thead>
+          <tr>
+            <th scope="col">Sr No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">City</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+
+      <div class="modal fade" id="addNewUser">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Enter details</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" />
+                </div>
+                <div class="form-group">
+                  <label for="text">Name</label>
+                  <input type="text" class="form-control" id="name" />
+                </div>
+                <div class="form-group">
+                  <label for="text">Username</label>
+                  <input type="text" class="form-control" id="username" />
+                </div>
+                <div class="form-group">
+                  <label for="text">City</label>
+                  <input type="text" class="form-control" id="city" />
+                </div>
+
+                <div class="form-group">
+                  <label for="text">phone</label>
+                  <input type="text" class="form-control" id="phone" />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" />
+                </div>
+                <button
+                  type="submit"
+                  id="btn"
+                  data-dismiss="modal"
+                  class="btn btn-primary"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+      integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+Program JS
+
+let fetchData = () => {
+    let httprequest = new XMLHttpRequest();
+    httprequest.open("GET", "https://jsonplaceholder.typicode.com/users");
+    httprequest.send();
+    httprequest.onload = () => {
+      let res = JSON.parse(httprequest.responseText);
+      console.log(res);
+      localStorage.setItem("users", JSON.stringify(res));
+      displayData();
+    };
+  };
+  
+  let displayData = () => {
+    let tbody = document.getElementById("tbody");
+    tbody.innerHTML = "";
+    let storedUser = JSON.parse(localStorage.getItem("users"));
+    storedUser.map(
+      (user, index) =>
+        (tbody.innerHTML += `
+                  <tr>
+                      <td>${index + 1}</td>
+                      <td>${user.name}</td>
+                      <td>${user.username}</td>
+                      <td>${user.email}</td>
+                      <td>${user.phone}</td>
+                      <td>${user.address.city}</td>
+                     
+                  </tr>`)
+    );
+  };
+  //initial Data
+  fetchData();
+  
+  let btn = document.getElementById("btn");
+  btn.addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const name = document.getElementById("name").value;
+    const city = document.getElementById("city").value;
+  
+    const phone = document.getElementById("phone").value;
+  
+    let postObject = {
+      email,
+      password,
+      name,
+      phone,
+      username,
+      address: {
+        city: city,
+      },
+    };
+  
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://jsonplaceholder.typicode.com/users/");
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    xhr.send(JSON.stringify(postObject));
+  
+    xhr.onload = () => {
+      if (xhr.status == 201) {
+        let storedUser = JSON.parse(localStorage.getItem("users"));
+        storedUser.unshift(postObject);
+        localStorage.setItem("users", JSON.stringify(storedUser));
+        displayData();
+      }
+    };
+  });
+
+
+
+Practical 3 c : Create an Angular application.
+CODE FOR LOGIN.COMPONENT PAGE
+<!DOCTYPE html>
+<html>
+<head>
+<base href="./" />
+<title>Angular 2 User Registration and Login Example</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- bootstrap css -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<!-- application css -->
+<link href="app.css" rel="stylesheet" />
+
+
+<!-- polyfill(s) for older browsers -->
+<script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+<script src=</script>
+<script src=</script>
+<script src=></script>
+<script src="systemjs.config.js"></script>
+<script>
+System.import('app').catch(function (err) { console.error(err); });
+</script>
+</head>
+<body>
+<app>Loading...</app>
+</body>
+</html>
+
+CODE FOR SIGNUP.COMPONENT PAGE
+
+
+<div class="col-md-6 col-md-offset-3">
+<h2>Register</h2>
+<form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+<label for="firstName">First Name</label>
+<input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
+<div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+</div> <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+<label for="lastName">Last Name</label>
+<input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
+<div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+</div> <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+<label for="username">Username</label>
+<input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+<div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+</div> <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+<label for="password">Password</label>
+<input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+<div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+</div> <div class="form-group">
+<button [disabled]="loading" class="btn btn-primary">Register</button>
+<img *ngIf="loading" src="data:image/gif; /> <a [routerLink]="['/login']" class="btn btn- link">Cancel</a>
+</div>
+</form>
+</div>
+
+Practical no -4a
+
+
+4a.Create a Node.JS Application which serves a static website.   
+Code:-   
+                       Create File Index.html 
+     
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Manthan Vaidya </title> 
+</head> 
+<body> 
+    <h1>Manthan Vaidya!</h1> 
+    <h2>This is my Static Website</h2> 
+</body> 
+</html>   
+                                                             Create File Server.js Code   
+   
+const express=require('express');  
+ const app=express();   
+   
+app.use(express.static('public'))
+ app.listen(4000,()=>{       
+console.log("Server is started");   
+})   
+   
+                                           Create Package.JS   
+{   
+
+  "name": "pr4",   
+  "version": "1.0.0",   
+  "description": "This is web technology practical",   
+  "main": "index.js",   
+  "scripts": {   
+    "test": "echo \"Error: no test specified\" && exit 1"   
+  },  
+  "author": "Manthan Vaidya",   
+ "license": "ISC",   
+ "dependencies": {   
+    "express": "^4.18.2"   
+  }   
+}   
+   
+
+
+Create a simple mobile website using jQuery Mobile.
+<!DOCTYPE html
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<title>jquery mobile</title>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-theme="b">
+<h1>ALARD COLLEGE</h1>
+</div>
+<div data-role="navbar" data-grid="c">
+<ul>
+<li><a href="index.html" class="ui-btn-active">home</a>
+</li>
+<li><a href="about_us.html" class="ui-btn-active">about us</a>
+</li>
+<li><a href="branches.html" class="ui-btn-active">branches</a>
+</li>
+<li><a href="login/register.html" class="ui-btn-active">login/register</a>
+</li>
+</ul>
+</div>
+<div class="content">
+<div>
+<img src="alard.jpeg" height="250px" width="550px">
+
+
+
+
+</div>
+<div data-role="footer" data-theme="b">
+<center>
+<div class="quicklinks">
+<h3>Quickslinks</h3>
+<a href="index.html">Home</a><br>
+<a href="about_us.html">About Us</a><br>
+<a href="branches.html">Branches</a><br>
+<a href="login.html">Login</a>
+</div>
+</center>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+@RELATION ipl22_data
+
+@ATTRIBUTE total_runs NUMERIC
+@ATTRIBUTE total_wickets NUMERIC
+@ATTRIBUTE win_margin NUMERIC
+@ATTRIBUTE powerplay_runs NUMERIC
+@ATTRIBUTE death_overs_runs NUMERIC
+@ATTRIBUTE extra_runs NUMERIC
+@ATTRIBUTE average_run_rate NUMERIC
+@ATTRIBUTE match_winner {Bangalore, Chennai, Delhi, Gujarat, Hyderabad, Kolkata, Lucknow, Mumbai, Punjab, Rajasthan}
+@ATTRIBUTE toss_winner {Bangalore, Chennai, Delhi, Gujarat, Hyderabad, Kolkata, Lucknow, Mumbai, Punjab, Rajasthan}
+@ATTRIBUTE won_by {Runs, Wickets}
+@ATTRIBUTE venue_type {Home, Away, Neutral}
+@ATTRIBUTE batting_first {Yes, No}
+@ATTRIBUTE match_type {Day, Night}
+
+@DATA
+367, 5, 85, 74, 38, 19, 7.4, Kolkata, Kolkata, Wickets, Home, Yes, Night
+319, 2, 6, 20, 74, 20, 7.52, Delhi, Delhi, Wickets, Home, No, Day
+387, 5, 36, 36, 76, 64, 6.83, Punjab, Punjab, Wickets, Neutral, Yes, Day
+355, 8, 66, 31, 50, 0, 6.07, Gujarat, Gujarat, Wickets, Home, No, Day
+281, 5, 74, 20, 60, 12, 7.85, Rajasthan, Hyderabad, Runs, Neutral, No, Night
+263, 4, 26, 56, 26, 19, 9.88, Bangalore, Bangalore, Wickets, Home, No, Night
+261, 8, 46, 26, 56, 9, 5.76, Lucknow, Lucknow, Wickets, Neutral, Yes, Night
+197, 3, 46, 20, 36, 11, 7.67, Kolkata, Kolkata, Wickets, Home, Yes, Night
+319, 7, 64, 56, 26, 12, 8.98, Rajasthan, Mumbai, Runs, Neutral, Yes, Night
+255, 7, 26, 46, 16, 25, 6.03, Gujarat, Delhi, Runs, Away, No, Day
+325, 9, 26, 46, 12, 63, 8.13, Chennai, Punjab, Wickets, Neutral, Yes, Night
+295, 7, 66, 26, 76, 12, 7.63, Hyderabad, Hyderabad, Runs, Home, No, Night
+293, 8, 54, 50, 26, 15, 8.52, Bangalore, Bangalore, Wickets, Away, Yes, Night
+372, 6, 50, 86, 12, 7, 5.78, Kolkata, Kolkata, Wickets, Away, No, Day
+278, 3, 74, 36, 36, 22, 7.18, Bangalore, Bangalore, Wickets, Away, No, Night
+360, 7, 58, 36, 76, 12, 6.83, Bangalore, Bangalore, Wickets, Neutral, No, Night
+258, 6, 44, 36, 66, 16, 7.76, Gujarat, Gujarat, Wickets, Away, No, Day
+197, 4, 44, 36, 36, 22, 7.92, Hyderabad, Hyderabad, Runs, Neutral, No, Night
+250, 7, 64, 46, 16, 15, 7.45, Rajasthan, Rajasthan, Runs, Neutral, No, Night
+263, 5, 59, 33, 66, 17, 6.53, Gujarat, Gujarat, Runs, Home, Yes, Day
+320, 8, 50, 86, 12, 7, 5.72, Bangalore, Bangalore, Wickets, Neutral, No, Day
+273, 7, 36, 46, 26, 17, 6.83, Hyderabad, Hyderabad, Wickets, Home, Yes, Night
+345, 5, 74, 36, 26, 27, 8.67, Gujarat, Rajasthan, Runs, Home, No, Day
+385, 7, 36, 50, 66, 12, 8.73, Bangalore, Bangalore, Wickets, Neutral, Yes, Night
+295, 6, 44, 36, 76, 12, 7.83, Hyderabad, Hyderabad, Wickets, Home, No, Night
+325, 9, 64, 36, 26, 15, 7.62, Rajasthan, Rajasthan, Runs, Neutral, No, Night
+187, 5, 2, 27, 46, 19, 6.9, Gujarat, Gujarat, Wickets, Home, Yes, Day
+261, 9, 45, 49, 33, 12, 9.17, Banglore, Lucknow, Runs, Away, Yes, Day
